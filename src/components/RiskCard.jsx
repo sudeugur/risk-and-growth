@@ -1,3 +1,5 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
 import { protocols } from "@/data/mockData";
 import styles from "./RiskCard.module.css";
 
@@ -73,13 +75,14 @@ function MiniBar({ label, value, color }) {
 }
 
 export default function RiskCards() {
+  const { t } = useLanguage();
   const topProtocols = protocols.slice(0, 6);
 
   return (
     <section className={styles.section} id="analytics">
       <div className={styles.container}>
-        <h2 className={styles.title}>Risk Analysis Overview</h2>
-        <p className={styles.subtitle}>Detailed risk breakdown for monitored protocols</p>
+        <h2 className={styles.title}>{t("riskCards.title")}</h2>
+        <p className={styles.subtitle}>{t("riskCards.subtitle")}</p>
 
         <div className={styles.grid}>
           {topProtocols.map((p, i) => {
@@ -106,10 +109,10 @@ export default function RiskCards() {
                 </div>
 
                 <div className={styles.cardBody}>
-                  <MiniBar label="Smart Contract" value={p.smartContractRisk} color="#00d4ff" />
-                  <MiniBar label="Liquidity" value={p.liquidityRisk} color="#7b2ff7" />
-                  <MiniBar label="Oracle" value={p.oracleRisk} color="#ff6b35" />
-                  <MiniBar label="Governance" value={p.governanceRisk} color="#00ff88" />
+                  <MiniBar label={t("riskCards.smartContract")} value={p.smartContractRisk} color="#00d4ff" />
+                  <MiniBar label={t("riskCards.liquidity")} value={p.liquidityRisk} color="#7b2ff7" />
+                  <MiniBar label={t("riskCards.oracle")} value={p.oracleRisk} color="#ff6b35" />
+                  <MiniBar label={t("riskCards.governance")} value={p.governanceRisk} color="#00ff88" />
                 </div>
 
                 <div className={styles.cardFooter}>
@@ -118,7 +121,7 @@ export default function RiskCards() {
                     className={`${styles.riskLabel} ${styles[p.riskLevel]}`}
                     style={{ borderColor: scoreColor, color: scoreColor }}
                   >
-                    {p.riskLevel.toUpperCase()}
+                    {t(`risk.${p.riskLevel}`)}
                   </span>
                 </div>
               </div>

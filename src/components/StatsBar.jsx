@@ -1,7 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/data/mockData";
+import { useLanguage } from "@/context/LanguageContext";
 import styles from "./StatsBar.module.css";
+
+const statsData = [
+  { labelKey: "stats.tvl", value: "$49.9B", icon: "🔒" },
+  { labelKey: "stats.protocolsMonitored", value: "2,847", icon: "📡" },
+  { labelKey: "stats.riskAlerts", value: "34", icon: "⚠️" },
+  { labelKey: "stats.activeUsers", value: "128K", icon: "👥" },
+];
 
 function AnimatedNumber({ value }) {
   const [display, setDisplay] = useState("0");
@@ -49,16 +56,18 @@ function AnimatedNumber({ value }) {
 }
 
 export default function StatsBar() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.statsSection}>
       <div className={styles.container}>
-        {stats.map((stat, i) => (
+        {statsData.map((stat, i) => (
           <div key={i} className={styles.statCard} style={{ animationDelay: `${i * 0.1}s` }}>
             <span className={styles.statIcon}>{stat.icon}</span>
             <span className={styles.statValue}>
               <AnimatedNumber value={stat.value} />
             </span>
-            <span className={styles.statLabel}>{stat.label}</span>
+            <span className={styles.statLabel}>{t(stat.labelKey)}</span>
           </div>
         ))}
       </div>

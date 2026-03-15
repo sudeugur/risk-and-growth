@@ -82,6 +82,44 @@
   width: 100%;
 }
 
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #a0aec0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.langToggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.langDivider {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+.langActive {
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+
 .walletBtn {
   display: flex;
   align-items: center;
@@ -157,7 +195,7 @@
   .links.open {
     display: flex;
   }
-  .walletBtn {
+  .rightGroup {
     display: none;
   }
 }

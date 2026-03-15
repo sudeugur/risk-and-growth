@@ -1,6 +1,10 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.hero} id="dashboard">
       <div className={styles.bgGrid}></div>
@@ -11,32 +15,29 @@ export default function HeroSection() {
       <div className={styles.content}>
         <div className={styles.badge}>
           <span className={styles.badgeDot}></span>
-          Real-Time Risk Monitoring
+          {t("hero.badge")}
         </div>
         <h1 className={styles.title}>
-          Navigate DeFi with
+          {t("hero.titleLine1")}
           <br />
-          <span className={styles.gradient}>Confidence</span>
+          <span className={styles.gradient}>{t("hero.titleHighlight")}</span>
         </h1>
-        <p className={styles.subtitle}>
-          Advanced blockchain risk analytics platform that monitors, evaluates, and scores DeFi
-          protocols in real-time. Protect your assets with institutional-grade risk intelligence.
-        </p>
+        <p className={styles.subtitle}>{t("hero.subtitle")}</p>
         <div className={styles.buttons}>
           <a href="#protocols" className={styles.primaryBtn}>
-            Explore Dashboard
+            {t("hero.exploreDashboard")}
             <span className={styles.btnArrow}>→</span>
           </a>
           <a href="#categories" className={styles.secondaryBtn}>
-            View Risk Framework
+            {t("hero.viewRiskFramework")}
           </a>
         </div>
         <div className={styles.trustBar}>
-          <span className={styles.trustItem}>🔒 256-bit Encryption</span>
+          <span className={styles.trustItem}>{t("hero.encryption")}</span>
           <span className={styles.trustDivider}>|</span>
-          <span className={styles.trustItem}>📊 Real-time Data</span>
+          <span className={styles.trustItem}>{t("hero.realTimeData")}</span>
           <span className={styles.trustDivider}>|</span>
-          <span className={styles.trustItem}>🛡️ Audited Protocols</span>
+          <span className={styles.trustItem}>{t("hero.auditedProtocols")}</span>
         </div>
       </div>
     </section>
