@@ -31,14 +31,10 @@ export default function Footer() {
             <a href="https://riskgrowth.my.canva.site/project-links" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t("footer.documentation")}</a>
             <a href="#" className={styles.footerLink}>API</a>
             <a href="https://riskgrowth.my.canva.site" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t("footer.blog")}</a>
-            <a href="#" className={styles.footerLink}>{t("footer.status")}</a>
           </div>
 
           <div className={styles.linksGroup}>
             <h4 className={styles.linksTitle}>{t("footer.community")}</h4>
-            <a href="#" className={styles.footerLink}>Twitter</a>
-            <a href="#" className={styles.footerLink}>Discord</a>
-            <a href="#" className={styles.footerLink}>Telegram</a>
             <a href="https://github.com/sudeugur/risk-and-growth" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>GitHub</a>
           </div>
         </div>
