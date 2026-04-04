@@ -18,6 +18,11 @@ const en = {
   "hero.realTimeData": "📊 Real-time Data",
   "hero.auditedProtocols": "🛡️ Audited Protocols",
 
+  // Modal
+  "modal.title": "How the System Works",
+  "modal.p1": "The Risk & Growth engine analyzes protocols and wallets within the decentralized finance (DeFi) ecosystem in real-time.",
+  "modal.p2": "Powered by advanced Machine Learning (ML) models, it calculates your connected wallet's Health Factor. It uses AI to predict your liquidation risk over 24-hour and 7-day horizons in case of sudden market crashes.",
+
   // Stats Bar
   "stats.tvl": "Total Value Locked",
   "stats.protocolsMonitored": "Protocols Monitored",

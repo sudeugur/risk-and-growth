@@ -18,6 +18,11 @@ const tr = {
   "hero.realTimeData": "📊 Gerçek Zamanlı Veri",
   "hero.auditedProtocols": "🛡️ Denetlenmiş Protokoller",
 
+  // Modal
+  "modal.title": "Sistem Nasıl Çalışır?",
+  "modal.p1": "Risk & Growth motoru, merkeziyetsiz finans (DeFi) dünyasındaki protokolleri ve cüzdanları gerçek zamanlı analiz eder.",
+  "modal.p2": "Arka planda koşan Makine Öğrenimi (ML) modelleri sayesinde, bağlanan cüzdanın mevcut borç/teminat oranını (Sağlık Faktörü) hesaplar. Ani piyasa düşüşlerinde yaşanabilecek likidasyon risklerini 24 saat ve 7 günlük vadede yapay zeka ile tahmin eder.",
+
   // Stats Bar
   "stats.tvl": "Toplam Kilitli Değer",
   "stats.protocolsMonitored": "İzlenen Protokoller",

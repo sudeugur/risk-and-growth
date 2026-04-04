@@ -1,9 +1,11 @@
 "use client";
+import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   const { t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className={styles.hero} id="dashboard">
@@ -24,10 +26,10 @@ export default function HeroSection() {
         </h1>
         <p className={styles.subtitle}>{t("hero.subtitle")}</p>
         <div className={styles.buttons}>
-          <a href="#protocols" className={styles.primaryBtn}>
+          <button onClick={() => setIsModalOpen(true)} className={styles.primaryBtn}>
             {t("hero.exploreDashboard")}
             <span className={styles.btnArrow}>→</span>
-          </a>
+          </button>
           <a href="#categories" className={styles.secondaryBtn}>
             {t("hero.viewRiskFramework")}
           </a>
@@ -40,6 +42,20 @@ export default function HeroSection() {
           <span className={styles.trustItem}>{t("hero.auditedProtocols")}</span>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeBtn} onClick={() => setIsModalOpen(false)}>×</button>
+            <h2 className={styles.modalTitle}>{t("modal.title")}</h2>
+            <p className={styles.modalText}>{t("modal.p1")}</p>
+            <p className={styles.modalText}>{t("modal.p2")}</p>
+            <button className={styles.modalActionBtn} onClick={() => setIsModalOpen(false)}>
+              Devam Et
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
