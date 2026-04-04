@@ -93,11 +93,28 @@ const tr = {
   "footer.privacy": "Gizlilik",
   "footer.terms": "Şartlar",
 
+  // Dashboard / Wallet
+  "dashboard.title": "Cüzdan Risk Panosu",
+  "dashboard.wallet": "Bağlı Cüzdan",
+  "dashboard.analyzing": "Motor Cüzdanı Analiz Ediyor...",
+  "dashboard.healthFactor": "Sağlık Faktörü (Health Factor)",
+  "dashboard.status": "Durum",
+  "dashboard.aiPrediction": "YZ Likidite Tahmini",
+  "dashboard.prob24h": "24s Likidite Olasılığı",
+  "dashboard.prob7d": "7g Likidite Olasılığı",
+  "dashboard.riskDrivers": "Risk Sürücüleri (Yüzde Etki)",
+  "dashboard.stressTests": "Stres Testi Simülasyonları",
+  "dashboard.stressDesc": "Keskin pazar düşüşleri altındaki cüzdan dayanıklılığı",
+
   // Risk levels
   "risk.low": "Düşük",
   "risk.medium": "Orta",
   "risk.high": "Yüksek",
   "risk.critical": "Kritik",
+  "risk.safe": "GÜVENDE",
+  "risk.liquidatable": "LİKİDİTE TEHLİKESİ",
+  "risk.survives": "HAYATTA KALIR",
+  "risk.liquidated": "LİKİDE OLDU"
 };
 
 export default tr;

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./Navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar({ walletAddress, onConnectWallet }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
@@ -41,9 +41,9 @@ export default function Navbar() {
             <span className={locale === "en" ? styles.langActive : ""}>EN</span>
           </button>
 
-          <button className={styles.walletBtn}>
-            <span className={styles.walletDot}></span>
-            {t("nav.connectWallet")}
+          <button className={styles.walletBtn} onClick={onConnectWallet}>
+            <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#818cf8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
+            {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}
           </button>
         </div>
 

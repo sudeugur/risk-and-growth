@@ -93,11 +93,28 @@ const en = {
   "footer.privacy": "Privacy",
   "footer.terms": "Terms",
 
+  // Dashboard / Wallet
+  "dashboard.title": "Wallet Risk Dashboard",
+  "dashboard.wallet": "Connected Wallet",
+  "dashboard.analyzing": "Engine Analyzing Wallet...",
+  "dashboard.healthFactor": "Health Factor",
+  "dashboard.status": "Status",
+  "dashboard.aiPrediction": "AI Liquidation Prediction",
+  "dashboard.prob24h": "24h Liquidation Probability",
+  "dashboard.prob7d": "7d Liquidation Probability",
+  "dashboard.riskDrivers": "Risk Drivers (Impact %)",
+  "dashboard.stressTests": "Stress Test Simulations",
+  "dashboard.stressDesc": "Wallet resilience under sharp market drops",
+
   // Risk levels
   "risk.low": "Low",
   "risk.medium": "Medium",
   "risk.high": "High",
   "risk.critical": "Critical",
+  "risk.safe": "SAFE",
+  "risk.liquidatable": "LIQUIDATION DANGER",
+  "risk.survives": "SURVIVES",
+  "risk.liquidated": "LIQUIDATED"
 };
 
 export default en;
