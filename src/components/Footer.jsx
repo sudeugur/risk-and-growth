@@ -19,14 +19,6 @@ export default function Footer() {
           </div>
 
           <div className={styles.linksGroup}>
-            <h4 className={styles.linksTitle}>{t("footer.platform")}</h4>
-            <a href="#dashboard" className={styles.footerLink}>{t("nav.dashboard")}</a>
-            <a href="#protocols" className={styles.footerLink}>{t("nav.protocols")}</a>
-            <a href="#analytics" className={styles.footerLink}>{t("nav.analytics")}</a>
-            <a href="#categories" className={styles.footerLink}>{t("footer.riskFramework")}</a>
-          </div>
-
-          <div className={styles.linksGroup}>
             <h4 className={styles.linksTitle}>{t("footer.resources")}</h4>
             <a href="https://riskgrowth.my.canva.site/project-links" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t("footer.documentation")}</a>
             <a href="#" className={styles.footerLink}>API</a>
