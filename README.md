@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeFi Lending Protocol: Credit Risk & VC Panel Engine
 
-## Getting Started
+Project Summary
+This project was developed to analyze credit risk in decentralized finance (DeFi) protocols and create a data-driven decision support mechanism for venture capital (VC) panels. It simulates the liquidity status of protocols, user collateral ratios, and potential default risks.
 
-First, run the development server:
+https://risk-and-growth.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="1800" height="837" alt="Ekran Resmi 2026-04-07 23 03 23" src="https://github.com/user-attachments/assets/ec2d0472-3955-40b4-8b0d-1f695ea69ff3" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Credit Risk Scoring: Dynamic risk scoring based on users' wallet history and collateral values.
 
-## Learn More
+VC Panel Interface: Comprehensive dashboard showing the health status of the protocol for investors.
 
-To learn more about Next.js, take a look at the following resources:
+Stress Test Simulation: Analysis of liquidation risks during market fluctuations (flash crash).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+On-Chain Data Analysis: Processing and interpreting data from smart contracts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Technologies Used
 
-## Deploy on Vercel
+Languages: Python (for data analysis), Solidity (Optional: if smart contract integration is available).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Libraries: Pandas, NumPy, Scikit-learn (for risk models).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Data Source: The Graph API, Etherscan, or private Node providers.
