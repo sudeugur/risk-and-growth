@@ -28,7 +28,11 @@ export default function Home() {
 
   return (
     <>
-      <Navbar walletAddress={walletAddress} onConnectWallet={handleConnectWallet} />
+      <Navbar 
+        walletAddress={walletAddress} 
+        onConnectWallet={handleConnectWallet} 
+        onGoHome={() => setWalletAddress(null)}
+      />
       <main>
         {walletAddress ? (
           <WalletDashboard walletAddress={walletAddress} />

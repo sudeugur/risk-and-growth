@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import styles from "./Navbar.module.css";
 
-export default function Navbar({ walletAddress, onConnectWallet }) {
+export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
@@ -29,7 +29,18 @@ export default function Navbar({ walletAddress, onConnectWallet }) {
           className={`${styles.links} ${menuOpen ? styles.open : ""}`}
           style={isSignedIn ? { position: 'absolute', left: '50%', transform: 'translateX(-50%)' } : {}}
         >
-          <a href="#dashboard" className={styles.link}>{t("nav.dashboard")}</a>
+          <a
+            href={walletAddress ? "#" : "#dashboard"}
+            className={styles.link}
+            onClick={(e) => {
+              if (walletAddress && onGoHome) {
+                e.preventDefault();
+                onGoHome();
+              }
+            }}
+          >
+            {t("nav.dashboard")}
+          </a>
           {!isSignedIn && <a href="#membership" className={styles.link}>{t("nav.membership")}</a>}
           {!isSignedIn && (
             <>
