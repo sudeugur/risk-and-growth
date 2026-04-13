@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./StatsBar.module.css";
 
-const statsData = [
+const DEFAULT_STATS = [
   { labelKey: "stats.tvl", value: "$49.9B", icon: "🔒" },
   { labelKey: "stats.protocolsMonitored", value: "2,847", icon: "📡" },
   { labelKey: "stats.riskAlerts", value: "34", icon: "⚠️" },
-  { labelKey: "stats.activeUsers", value: "128K", icon: "👥" },
 ];
 
 function AnimatedNumber({ value }) {
@@ -57,6 +56,23 @@ function AnimatedNumber({ value }) {
 
 export default function StatsBar() {
   const { t } = useLanguage();
+  const [activeUsers, setActiveUsers] = useState("128K");
+
+  useEffect(() => {
+    fetch('/api/stats')
+      .then(res => res.json())
+      .then(data => {
+        if (data.total_count) {
+          setActiveUsers(data.total_count.toString());
+        }
+      })
+      .catch(err => console.error("Could not fetch user stats:", err));
+  }, []);
+
+  const statsData = [
+    ...DEFAULT_STATS,
+    { labelKey: "stats.activeUsers", value: activeUsers, icon: "👥" }
+  ];
 
   return (
     <section className={styles.statsSection}>

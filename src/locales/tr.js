@@ -5,6 +5,7 @@ const tr = {
   "nav.analytics": "Analitik",
   "nav.riskCategories": "Risk Kategorileri",
   "nav.connectWallet": "Cüzdan Bağla",
+  "nav.membership": "Üyelik",
 
   // Hero Section
   "hero.badge": "Gerçek Zamanlı Risk İzleme",
@@ -22,6 +23,10 @@ const tr = {
   "modal.title": "Sistem Nasıl Çalışır?",
   "modal.p1": "Risk & Growth motoru, merkeziyetsiz finans (DeFi) dünyasındaki protokolleri ve cüzdanları gerçek zamanlı analiz eder.",
   "modal.p2": "Arka planda koşan Makine Öğrenimi (ML) modelleri sayesinde, bağlanan cüzdanın mevcut borç/teminat oranını (Sağlık Faktörü) hesaplar. Ani piyasa düşüşlerinde yaşanabilecek likidasyon risklerini 24 saat ve 7 günlük vadede yapay zeka ile tahmin eder.",
+  "modal.portfolioTitle": "Portföy Analizi Nasıl Çalışır?",
+  "modal.portfolioDesc1": "Risk & Growth platformu ile tüm DeFi varlıklarınızı tek bir ekranda saniyeler içinde analiz edebilirsiniz.",
+  "modal.portfolioDesc2": "1. <b>Cüzdanı Bağla</b> butonuna tıklayarak Web3 cüzdanınızı (MetaMask, OKX vb.) eşleştirin.<br />2. Sistemimiz cüzdanınızdaki varlıkları ve aktif borç/kredi pozisyonlarınızı ağlar üzerinden otomatik olarak tarar.<br />3. Portföyünüzün toplam anlık değeri, Sağlık Skoru (Health Factor) ve olası tasfiye (likidasyon) riskleriniz anında dashboard panelinize yansır.",
+  "modal.understand": "Anladım",
 
   // Stats Bar
   "stats.tvl": "Toplam Kilitli Değer",
@@ -119,7 +124,16 @@ const tr = {
   "risk.safe": "GÜVENDE",
   "risk.liquidatable": "LİKİDİTE TEHLİKESİ",
   "risk.survives": "HAYATTA KALIR",
-  "risk.liquidated": "LİKİDE OLDU"
+  "risk.liquidated": "LİKİDE OLDU",
+
+  // Onboarding
+  "hero.integrationGuide": "Sistem Entegrasyon Kılavuzu",
+  "onboarding.title": "Sisteme Giriş Yapın",
+  "onboarding.description": "Protokol Risk Paneli'ni görüntülemek ve yapay zeka destekli analizlerden faydalanmak için <a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Paneli Keşfet\"</a> butonundan ücretsiz kayıt olun. Kayıt sonrası adımlar:",
+  "onboarding.step1Title": "Cüzdan Eşleştirme",
+  "onboarding.step1Desc": "<a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Paneli Keşfet\"</a> butonuna tıklayıp üye olduktan sonra, ekranda belirecek olan \"Cüzdanı Bağla\" butonu üzerinden Web3 cüzdanınızı eşleştirin.",
+  "onboarding.step2Title": "Risk Tarama",
+  "onboarding.step2Desc": "Cüzdanınız bağlandığı an, Python tabanlı risk motorumuz devreye girer. Protokol Risk tablosu ve Health Factor (Sağlık Skoru) hesaplamanız başlar."
 };
 
 export default tr;

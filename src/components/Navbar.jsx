@@ -1,12 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAuth, UserButton } from "@clerk/nextjs";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ walletAddress, onConnectWallet }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
+  const { isSignedIn } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,11 +25,18 @@ export default function Navbar({ walletAddress, onConnectWallet }) {
           </span>
         </a>
 
-        <div className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
+        <div 
+          className={`${styles.links} ${menuOpen ? styles.open : ""}`}
+          style={isSignedIn ? { position: 'absolute', left: '50%', transform: 'translateX(-50%)' } : {}}
+        >
           <a href="#dashboard" className={styles.link}>{t("nav.dashboard")}</a>
-          <a href="#protocols" className={styles.link}>{t("nav.protocols")}</a>
-          <a href="#analytics" className={styles.link}>{t("nav.analytics")}</a>
-          <a href="#categories" className={styles.link}>{t("nav.riskCategories")}</a>
+          {!isSignedIn && <a href="#membership" className={styles.link}>{t("nav.membership")}</a>}
+          {!isSignedIn && (
+            <>
+              <a href="#analytics" className={styles.link}>{t("nav.analytics")}</a>
+              <a href="#categories" className={styles.link}>{t("nav.riskCategories")}</a>
+            </>
+          )}
         </div>
 
         <div className={styles.rightGroup}>
@@ -41,10 +50,19 @@ export default function Navbar({ walletAddress, onConnectWallet }) {
             <span className={locale === "en" ? styles.langActive : ""}>EN</span>
           </button>
 
-          <button className={styles.walletBtn} onClick={onConnectWallet}>
-            <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#818cf8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
-            {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}
-          </button>
+          {isSignedIn && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <button 
+                className={styles.walletBtn} 
+                onClick={walletAddress ? onConnectWallet : undefined}
+                style={!walletAddress ? { opacity: 0.6, cursor: 'not-allowed' } : {}}
+              >
+                <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#8f9ba8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
+                {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}
+              </button>
+              <UserButton afterSignOutUrl="/" />
+            </div>
+          )}
         </div>
 
         <button

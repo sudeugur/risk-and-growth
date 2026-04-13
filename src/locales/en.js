@@ -5,6 +5,7 @@ const en = {
   "nav.analytics": "Analytics",
   "nav.riskCategories": "Risk Categories",
   "nav.connectWallet": "Connect Wallet",
+  "nav.membership": "Membership",
 
   // Hero Section
   "hero.badge": "Real-Time Risk Monitoring",
@@ -22,6 +23,10 @@ const en = {
   "modal.title": "How the System Works",
   "modal.p1": "The Risk & Growth engine analyzes protocols and wallets within the decentralized finance (DeFi) ecosystem in real-time.",
   "modal.p2": "Powered by advanced Machine Learning (ML) models, it calculates your connected wallet's Health Factor. It uses AI to predict your liquidation risk over 24-hour and 7-day horizons in case of sudden market crashes.",
+  "modal.portfolioTitle": "How Portfolio Analysis Works?",
+  "modal.portfolioDesc1": "With the Risk & Growth platform, you can analyze all your DeFi assets on a single screen in seconds.",
+  "modal.portfolioDesc2": "1. Pair your Web3 wallet (MetaMask, OKX, etc.) by clicking the <b>Connect Wallet</b> button.<br />2. Our system automatically scans your assets and active loan/credit positions across networks.<br />3. Your total real-time portfolio value, Health Factor, and potential liquidation risks are instantly reflected on your dashboard panel.",
+  "modal.understand": "I Understand",
 
   // Stats Bar
   "stats.tvl": "Total Value Locked",
@@ -119,7 +124,16 @@ const en = {
   "risk.safe": "SAFE",
   "risk.liquidatable": "LIQUIDATION DANGER",
   "risk.survives": "SURVIVES",
-  "risk.liquidated": "LIQUIDATED"
+  "risk.liquidated": "LIQUIDATED",
+
+  // Onboarding
+  "hero.integrationGuide": "System Integration Guide",
+  "onboarding.title": "Log In to the System",
+  "onboarding.description": "Register for free from the <a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Explore Dashboard\"</a> button to view the Protocol Risk Panel and take advantage of AI-supported analytics. Post-registration steps:",
+  "onboarding.step1Title": "Wallet Pairing",
+  "onboarding.step1Desc": "After registering via the <a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Explore Dashboard\"</a> button, connect your Web3 wallet using the newly appearing \"Connect Wallet\" button.",
+  "onboarding.step2Title": "Risk Scanning",
+  "onboarding.step2Desc": "As soon as your wallet connects, our Python-based risk engine kicks in. The Protocol Risk table and your Health Factor calculation begin."
 };
 
 export default en;
