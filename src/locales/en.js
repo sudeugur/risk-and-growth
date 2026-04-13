@@ -96,6 +96,8 @@ const en = {
   "footer.riskFramework": "Risk Framework",
   "footer.resources": "Resources",
   "footer.documentation": "Documentation",
+  "footer.api": "API Architecture",
+  "footer.apiTooltip": "Discover the APIs and technology stack behind our platform",
   "footer.blog": "Blog",
   "footer.status": "Status",
   "footer.community": "Community",
@@ -133,7 +135,17 @@ const en = {
   "onboarding.step1Title": "Wallet Pairing",
   "onboarding.step1Desc": "After registering via the <a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Explore Dashboard\"</a> button, connect your Web3 wallet using the newly appearing \"Connect Wallet\" button.",
   "onboarding.step2Title": "Risk Scanning",
-  "onboarding.step2Desc": "As soon as your wallet connects, our Python-based risk engine kicks in. The Protocol Risk table and your Health Factor calculation begin."
+  "onboarding.step2Desc": "As soon as your wallet connects, our Python-based risk engine kicks in. The Protocol Risk table and your Health Factor calculation begin.",
+
+  // API Docs Page
+  "apiDocs.title": "API Integrations & Architecture",
+  "apiDocs.subtitle": "Transparent technology stack and data sources powering the Risk & Growth engine.",
+  "apiDocs.whyTitle": "Why Do We Use APIs?",
+  "apiDocs.whyDesc": "To provide institutional-grade decentralized finance analysis, we integrate with industry-leading APIs. This modular approach ensures real-time data accuracy, maximum security, and robust scalability across multiple blockchain networks without compromising user privacy.",
+  "apiDocs.clerkTitle": "1. Clerk Auth API",
+  "apiDocs.clerkDesc": "We utilize Clerk for robust, Web3-compatible user authentication. It ensures that user accounts, sessions, and active connection instances are securely managed without locally storing sensitive password data. It also allows us to present real-time active user metrics on our dashboard.",
+  "apiDocs.defiTitle": "2. DeFi Risk Engine (Coming Soon)",
+  "apiDocs.defiDesc": "Our proprietary Python-based risk motor will soon communicate via internal APIs to deliver live on-chain Health Factor calculations and AI-driven liquidation predictions directly to your wallet dashboard."
 };
 
 export default en;

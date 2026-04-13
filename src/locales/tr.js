@@ -96,6 +96,8 @@ const tr = {
   "footer.riskFramework": "Risk Çerçevesi",
   "footer.resources": "Kaynaklar",
   "footer.documentation": "Dokümantasyon",
+  "footer.api": "API Mimarisi",
+  "footer.apiTooltip": "Platformumuzu güçlendiren API'leri ve mimariyi keşfedin",
   "footer.blog": "Blog",
   "footer.status": "Durum",
   "footer.community": "Topluluk",
@@ -133,7 +135,17 @@ const tr = {
   "onboarding.step1Title": "Cüzdan Eşleştirme",
   "onboarding.step1Desc": "<a href='#dashboard' style='color: #00d4ff; text-decoration: underline;'>\"Paneli Keşfet\"</a> butonuna tıklayıp üye olduktan sonra, ekranda belirecek olan \"Cüzdanı Bağla\" butonu üzerinden Web3 cüzdanınızı eşleştirin.",
   "onboarding.step2Title": "Risk Tarama",
-  "onboarding.step2Desc": "Cüzdanınız bağlandığı an, Python tabanlı risk motorumuz devreye girer. Protokol Risk tablosu ve Health Factor (Sağlık Skoru) hesaplamanız başlar."
+  "onboarding.step2Desc": "Cüzdanınız bağlandığı an, Python tabanlı risk motorumuz devreye girer. Protokol Risk tablosu ve Health Factor (Sağlık Skoru) hesaplamanız başlar.",
+
+  // API Docs Page
+  "apiDocs.title": "API Entegrasyonları ve Mimari",
+  "apiDocs.subtitle": "Risk & Growth motorunu güçlendiren şeffaf teknoloji yığınımız ve veri kaynaklarımız.",
+  "apiDocs.whyTitle": "Neden API Kullanıyoruz?",
+  "apiDocs.whyDesc": "Kurumsal düzeyde merkeziyetsiz finans analizleri sunabilmek için endüstri lideri API'ler ile entegre çalışıyoruz. Bu modüler yaklaşım; anlık veri doğruluğu, maksimum güvenlik ve kullanıcı gizliliğinden ödün vermeden hızlı işlem kabiliyeti sağlar.",
+  "apiDocs.clerkTitle": "1. Clerk Auth API",
+  "apiDocs.clerkDesc": "Web3 uyumlu ve son derece güvenli bir kullanıcı kimlik doğrulama süreci için Clerk'i kullanıyoruz. Hassas verileri sunucularımızda tutmadan, oturum yönetimini kusursuz bir şekilde sağlar ve platformumuzun aktif (canlı) kullanıcı verilerini ekrana yansıtmamıza olanak tanır.",
+  "apiDocs.defiTitle": "2. DeFi Risk Motoru (Çok Yakında)",
+  "apiDocs.defiDesc": "Geliştirmekte olduğumuz yerel Python tabanlı risk analiz motorumuz, cüzdanınızdaki sistem hesaplamalarını ve yapay zeka destekli likidasyon tahminlerini anlık olarak panele yansıtmak üzere özel bir iç API köprüsü kullanacaktır."
 };
 
 export default tr;

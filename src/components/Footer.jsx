@@ -21,7 +21,7 @@ export default function Footer() {
           <div className={styles.linksGroup}>
             <h4 className={styles.linksTitle}>{t("footer.resources")}</h4>
             <a href="https://riskgrowth.my.canva.site" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t("footer.documentation")}</a>
-            <a href="#" className={styles.footerLink}>API</a>
+            <a href="/api-docs" className={styles.footerLink} title={t("footer.apiTooltip")}>{t("footer.api")}</a>
             <a href="https://riskgrowth.my.canva.site" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t("footer.blog")}</a>
           </div>
 

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import styles from "./Navbar.module.css";
@@ -9,6 +10,7 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
   const { isSignedIn } = useAuth();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -30,10 +32,14 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
           style={isSignedIn ? { position: 'absolute', left: '50%', transform: 'translateX(-50%)' } : {}}
         >
           <a
-            href={walletAddress ? "#" : "#dashboard"}
+            href={
+              pathname === "/" 
+                ? (walletAddress ? "#" : "#dashboard") 
+                : (isSignedIn ? "/" : "/#dashboard")
+            }
             className={styles.link}
             onClick={(e) => {
-              if (walletAddress && onGoHome) {
+              if (pathname === "/" && walletAddress && onGoHome) {
                 e.preventDefault();
                 onGoHome();
               }
