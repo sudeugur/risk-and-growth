@@ -45,7 +45,16 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
               }
             }}
           >
-            {t("nav.dashboard")}
+            {walletAddress ? (
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                {t("nav.dashboard")}
+              </span>
+            ) : (
+              t("nav.dashboard")
+            )}
           </a>
           {!isSignedIn && <a href="#membership" className={styles.link}>{t("nav.membership")}</a>}
           {!isSignedIn && (
@@ -71,8 +80,7 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <button 
                 className={styles.walletBtn} 
-                onClick={walletAddress ? onConnectWallet : undefined}
-                style={!walletAddress ? { opacity: 0.6, cursor: 'not-allowed' } : {}}
+                style={walletAddress ? { cursor: 'default' } : { opacity: 0.6, cursor: 'not-allowed' }}
               >
                 <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#8f9ba8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
                 {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}

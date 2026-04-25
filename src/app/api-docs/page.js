@@ -52,6 +52,17 @@ export default function ApiDocsPage() {
                 {t("apiDocs.defiDesc")}
               </p>
             </div>
+
+            {/* DeFiLlama API Card */}
+            <div style={{ background: 'rgba(52, 211, 153, 0.05)', border: '1px solid rgba(52, 211, 153, 0.2)', borderRadius: '24px', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: '#34d399' }}></div>
+              <h3 style={{ fontSize: '1.5rem', color: '#34d399', marginBottom: '1rem' }}>
+                {t("apiDocs.llamaTitle")}
+              </h3>
+              <p style={{ fontSize: '1.05rem', color: '#a0aec0', lineHeight: '1.6' }}>
+                {t("apiDocs.llamaDesc")}
+              </p>
+            </div>
           </div>
 
         </div>

@@ -14,7 +14,8 @@ const tr = {
   "hero.subtitle":
     "DeFi protokollerini gerçek zamanlı izleyen, değerlendiren ve puanlayan gelişmiş blockchain risk analiz platformu. Kurumsal düzeyde risk istihbaratı ile varlıklarınızı koruyun.",
   "hero.exploreDashboard": "Paneli Keşfet",
-  "hero.viewRiskFramework": "Risk Çerçevesini Gör",
+  "hero.viewRiskFramework": "Sistem Hakkında",
+  "hero.livePanel": "Risk Analizi Özeti ↓",
   "hero.encryption": "🔒 256-bit Şifreleme",
   "hero.realTimeData": "📊 Gerçek Zamanlı Veri",
   "hero.auditedProtocols": "🛡️ Denetlenmiş Protokoller",
@@ -37,7 +38,7 @@ const tr = {
   // Protocol Table
   "protocols.title": "Protokol Risk Paneli",
   "protocols.subtitle": "En iyi DeFi protokollerinin gerçek zamanlı risk değerlendirmesi",
-  "protocols.all": "Tümü",
+  "protocols.all": "İlk 20",
   "protocols.lending": "Borç Verme",
   "protocols.dex": "DEX",
   "protocols.yield": "Getiri",
@@ -144,8 +145,15 @@ const tr = {
   "apiDocs.whyDesc": "Kurumsal düzeyde merkeziyetsiz finans analizleri sunabilmek için endüstri lideri API'ler ile entegre çalışıyoruz. Bu modüler yaklaşım; anlık veri doğruluğu, maksimum güvenlik ve kullanıcı gizliliğinden ödün vermeden hızlı işlem kabiliyeti sağlar.",
   "apiDocs.clerkTitle": "1. Clerk Auth API",
   "apiDocs.clerkDesc": "Web3 uyumlu ve son derece güvenli bir kullanıcı kimlik doğrulama süreci için Clerk'i kullanıyoruz. Hassas verileri sunucularımızda tutmadan, oturum yönetimini kusursuz bir şekilde sağlar ve platformumuzun aktif (canlı) kullanıcı verilerini ekrana yansıtmamıza olanak tanır.",
-  "apiDocs.defiTitle": "2. DeFi Risk Motoru (Çok Yakında)",
-  "apiDocs.defiDesc": "Geliştirmekte olduğumuz yerel Python tabanlı risk analiz motorumuz, cüzdanınızdaki sistem hesaplamalarını ve yapay zeka destekli likidasyon tahminlerini anlık olarak panele yansıtmak üzere özel bir iç API köprüsü kullanacaktır."
+  "apiDocs.defiTitle": "2. Python Yapay Zeka Risk Motoru & LlamaRPC",
+  "apiDocs.defiDesc": "Arka planda koşan makine öğrenimi algoritmalarımız, bağlanan cüzdanların Aave V3 sözleşmelerindeki borç ve likidite durumunu LlamaRPC üzerinden doğrudan Ethereum blokzincirini tarayarak (json-rpc) saniyeler içinde analiz eder.",
+  "apiDocs.llamaTitle": "3. DeFiLlama Protokol API'si",
+  "apiDocs.llamaDesc": "Platformda yer alan Risk Kartları ve Protokol Risk Tabloları, o an dünya çapındaki en büyük (TVL) kripto protokollerini listelemek ve puanlamak için saniye saniye canlı DeFiLlama Open API veritabanından veri çeker.",
+
+  "infoModal.protocolTitle": "Protokol Risk Paneli Nedir?",
+  "infoModal.protocolDesc": "Piyasadaki 4000'den fazla protokol arasından, anlık olarak hacmine göre seçili kategorinin en büyük İlk 20 protokolünü listeler. Risk puanları; hacim büyüklüğü, kod karmaşıklığı ve dalgalanma metrikleri kullanılarak hesaplanır.",
+  "infoModal.riskTitle": "Risk Analizi Genel Görünümü",
+  "infoModal.riskDesc": "Dünya çapında en yüksek hacme sahip (Top 6) protokollerin detaylı risk MR'ını (Akıllı Sözleşme, Likidite, Oracle, Yönetişim) çeker. Bu elit projeler üzerinden pazarın genel güvenilirlik durumu özetlenir."
 };
 
 export default tr;

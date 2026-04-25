@@ -10,27 +10,31 @@ import RiskCards from "@/components/RiskCard";
 import RiskCategories from "@/components/RiskCategories";
 import Footer from "@/components/Footer";
 import WalletDashboard from "@/components/WalletDashboard";
+import WalletModal from "@/components/WalletModal";
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState(null);
+  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const { isSignedIn } = useAuth();
   const { t } = useLanguage();
 
-  const handleConnectWallet = () => {
+  const openConnectDialog = () => {
     if (walletAddress) {
       setWalletAddress(null); // Disconnect
       return;
     }
-    // Generate a mock wallet address to simulate connection
-    const mockAddress = "0x" + Array.from({length: 40}, () => Math.floor(Math.random()*16).toString(16)).join('');
-    setWalletAddress(mockAddress);
+    setIsWalletModalOpen(true);
+  };
+
+  const handleConnectWallet = (address) => {
+    setWalletAddress(address);
   };
 
   return (
     <>
       <Navbar 
         walletAddress={walletAddress} 
-        onConnectWallet={handleConnectWallet} 
+        onConnectWallet={openConnectDialog} 
         onGoHome={() => setWalletAddress(null)}
       />
       <main>
@@ -38,7 +42,7 @@ export default function Home() {
           <WalletDashboard walletAddress={walletAddress} />
         ) : (
           <>
-            <HeroSection walletAddress={walletAddress} onConnectWallet={handleConnectWallet} />
+            <HeroSection walletAddress={walletAddress} onConnectWallet={openConnectDialog} />
             {!isSignedIn ? (
               <>
                 <StatsBar />
@@ -64,16 +68,26 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <RiskCards />
+                <ProtocolTable />
                 <RiskCategories />
               </>
             ) : (
-              <ProtocolTable />
+              <>
+                <div id="risk-overview">
+                  <RiskCards />
+                </div>
+                <ProtocolTable />
+              </>
             )}
           </>
         )}
       </main>
       <Footer />
+      <WalletModal 
+        isOpen={isWalletModalOpen} 
+        onClose={() => setIsWalletModalOpen(false)} 
+        onConnect={handleConnectWallet} 
+      />
     </>
   );
 }

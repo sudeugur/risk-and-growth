@@ -14,7 +14,8 @@ const en = {
   "hero.subtitle":
     "Advanced blockchain risk analytics platform that monitors, evaluates, and scores DeFi protocols in real-time. Protect your assets with institutional-grade risk intelligence.",
   "hero.exploreDashboard": "Explore Dashboard",
-  "hero.viewRiskFramework": "View Risk Framework",
+  "hero.viewRiskFramework": "About the System",
+  "hero.livePanel": "Risk Analysis Overview ↓",
   "hero.encryption": "🔒 256-bit Encryption",
   "hero.realTimeData": "📊 Real-time Data",
   "hero.auditedProtocols": "🛡️ Audited Protocols",
@@ -37,7 +38,7 @@ const en = {
   // Protocol Table
   "protocols.title": "Protocol Risk Dashboard",
   "protocols.subtitle": "Real-time risk assessment of top DeFi protocols",
-  "protocols.all": "All",
+  "protocols.all": "Top 20",
   "protocols.lending": "Lending",
   "protocols.dex": "DEX",
   "protocols.yield": "Yield",
@@ -144,8 +145,15 @@ const en = {
   "apiDocs.whyDesc": "To provide institutional-grade decentralized finance analysis, we integrate with industry-leading APIs. This modular approach ensures real-time data accuracy, maximum security, and robust scalability across multiple blockchain networks without compromising user privacy.",
   "apiDocs.clerkTitle": "1. Clerk Auth API",
   "apiDocs.clerkDesc": "We utilize Clerk for robust, Web3-compatible user authentication. It ensures that user accounts, sessions, and active connection instances are securely managed without locally storing sensitive password data. It also allows us to present real-time active user metrics on our dashboard.",
-  "apiDocs.defiTitle": "2. DeFi Risk Engine (Coming Soon)",
-  "apiDocs.defiDesc": "Our proprietary Python-based risk motor will soon communicate via internal APIs to deliver live on-chain Health Factor calculations and AI-driven liquidation predictions directly to your wallet dashboard."
+  "apiDocs.defiTitle": "2. Python AI Risk Engine & LlamaRPC",
+  "apiDocs.defiDesc": "Our background machine learning algorithms parse direct Ethereum JSON-RPC queries via LlamaRPC to instantly analyze real Aave V3 borrow/collateral states of the connected wallets.",
+  "apiDocs.llamaTitle": "3. DeFiLlama Protocols API",
+  "apiDocs.llamaDesc": "Risk Cards and Protocol Risk Tables dynamically fetch data from the live DeFiLlama Open API every second to accurately rank and score the largest TVL crypto protocols globally.",
+
+  "infoModal.protocolTitle": "What is the Protocol Risk Panel?",
+  "infoModal.protocolDesc": "Out of 4000+ protocols in the market, this table dynamically lists the Top 20 protocols of the selected category based on volume. Risk scores are calculated using volume size, code complexity, and volatility metrics.",
+  "infoModal.riskTitle": "Risk Analysis Overview",
+  "infoModal.riskDesc": "Performs a detailed risk MRI (Smart Contract, Liquidity, Oracle, Governance) of the worldwide Top 6 protocols by highest volume. The general reliability status of the market is summarized through these elite projects."
 };
 
 export default en;

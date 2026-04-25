@@ -3,10 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./StatsBar.module.css";
 
-const DEFAULT_STATS = [
-  { labelKey: "stats.tvl", value: "$49.9B", icon: "🔒" },
-  { labelKey: "stats.protocolsMonitored", value: "2,847", icon: "📡" },
-  { labelKey: "stats.riskAlerts", value: "34", icon: "⚠️" },
+import { formatTVL } from "@/utils/riskProxy";
+
+const INITIAL_STATS = [
+  { labelKey: "stats.tvl", value: "$0", icon: "🔒", key: "tvl" },
+  { labelKey: "stats.protocolsMonitored", value: "0", icon: "📡", key: "monitored" },
+  { labelKey: "stats.riskAlerts", value: "0", icon: "⚠️", key: "alerts" },
 ];
 
 function AnimatedNumber({ value }) {
@@ -57,8 +59,40 @@ function AnimatedNumber({ value }) {
 export default function StatsBar() {
   const { t } = useLanguage();
   const [activeUsers, setActiveUsers] = useState("128K");
+  const [dynamicStats, setDynamicStats] = useState({
+    tvl: "Yükleniyor...",
+    monitored: "0",
+    alerts: "0"
+  });
 
   useEffect(() => {
+    // Toplam protokol verilerini çek
+    fetch("https://api.llama.fi/protocols")
+      .then(res => res.json())
+      .then(data => {
+        let totalTVL = 0;
+        let riskAlerts = 0;
+        
+        data.forEach(p => {
+          totalTVL += (p.tvl || 0);
+          // Gerçekçi Risk Uyarısı: Hacmi 10 Milyon $'dan büyük ve son gün %5'ten fazla düşüş yaşayanlar
+          if (p.tvl > 1e7 && p.change_1d < -5) {
+            riskAlerts++;
+          }
+        });
+        
+        setDynamicStats({
+          tvl: formatTVL(totalTVL),
+          monitored: data.length.toLocaleString(),
+          alerts: riskAlerts.toString()
+        });
+      })
+      .catch(err => {
+        console.error("DeFiLlama fetch error for StatsBar:", err);
+        setDynamicStats({ tvl: "$0", monitored: "0", alerts: "0" });
+      });
+
+    // Aktif kullanıcıları çek (Clerk API)
     fetch('/api/stats')
       .then(res => res.json())
       .then(data => {
@@ -70,7 +104,9 @@ export default function StatsBar() {
   }, []);
 
   const statsData = [
-    ...DEFAULT_STATS,
+    { labelKey: "stats.tvl", value: dynamicStats.tvl, icon: "🔒" },
+    { labelKey: "stats.protocolsMonitored", value: dynamicStats.monitored, icon: "📡" },
+    { labelKey: "stats.riskAlerts", value: dynamicStats.alerts, icon: "⚠️" },
     { labelKey: "stats.activeUsers", value: activeUsers, icon: "👥" }
   ];
 
