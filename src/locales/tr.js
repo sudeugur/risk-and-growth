@@ -145,8 +145,8 @@ const tr = {
   "apiDocs.whyDesc": "Kurumsal düzeyde merkeziyetsiz finans analizleri sunabilmek için endüstri lideri API'ler ile entegre çalışıyoruz. Bu modüler yaklaşım; anlık veri doğruluğu, maksimum güvenlik ve kullanıcı gizliliğinden ödün vermeden hızlı işlem kabiliyeti sağlar.",
   "apiDocs.clerkTitle": "1. Clerk Auth API",
   "apiDocs.clerkDesc": "Web3 uyumlu ve son derece güvenli bir kullanıcı kimlik doğrulama süreci için Clerk'i kullanıyoruz. Hassas verileri sunucularımızda tutmadan, oturum yönetimini kusursuz bir şekilde sağlar ve platformumuzun aktif (canlı) kullanıcı verilerini ekrana yansıtmamıza olanak tanır.",
-  "apiDocs.defiTitle": "2. Python Yapay Zeka Risk Motoru & LlamaRPC",
-  "apiDocs.defiDesc": "Arka planda koşan makine öğrenimi algoritmalarımız, bağlanan cüzdanların Aave V3 sözleşmelerindeki borç ve likidite durumunu LlamaRPC üzerinden doğrudan Ethereum blokzincirini tarayarak (json-rpc) saniyeler içinde analiz eder.",
+  "apiDocs.defiTitle": "2. Python Yapay Zeka Risk Motoru (Render Cloud) & LlamaRPC",
+  "apiDocs.defiDesc": "Makine öğrenimi ağırlıklı risk hesaplamalarımız bağımsız bir mikro-servis olarak Render bulut sunucularında (7/24) barındırılmaktadır. Bu motor mimarisi, bağlanan cüzdanların Aave V3 sözleşmelerindeki borç ve likidite durumunu LlamaRPC üzerinden Ethereum blokzincirini tarayarak analiz eder ve Vercel'deki frontend arayüzümüze saniyeler içinde api üzerinden servis eder.",
   "apiDocs.llamaTitle": "3. DeFiLlama Protokol API'si",
   "apiDocs.llamaDesc": "Platformda yer alan Risk Kartları ve Protokol Risk Tabloları, o an dünya çapındaki en büyük (TVL) kripto protokollerini listelemek ve puanlamak için saniye saniye canlı DeFiLlama Open API veritabanından veri çeker.",
 

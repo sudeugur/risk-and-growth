@@ -145,8 +145,8 @@ const en = {
   "apiDocs.whyDesc": "To provide institutional-grade decentralized finance analysis, we integrate with industry-leading APIs. This modular approach ensures real-time data accuracy, maximum security, and robust scalability across multiple blockchain networks without compromising user privacy.",
   "apiDocs.clerkTitle": "1. Clerk Auth API",
   "apiDocs.clerkDesc": "We utilize Clerk for robust, Web3-compatible user authentication. It ensures that user accounts, sessions, and active connection instances are securely managed without locally storing sensitive password data. It also allows us to present real-time active user metrics on our dashboard.",
-  "apiDocs.defiTitle": "2. Python AI Risk Engine & LlamaRPC",
-  "apiDocs.defiDesc": "Our background machine learning algorithms parse direct Ethereum JSON-RPC queries via LlamaRPC to instantly analyze real Aave V3 borrow/collateral states of the connected wallets.",
+  "apiDocs.defiTitle": "2. Python AI Risk Engine (Render Cloud) & LlamaRPC",
+  "apiDocs.defiDesc": "Our machine learning-heavy risk calculations are hosted as an independent microservice on Render cloud servers (24/7). This engine architecture parses direct Ethereum JSON-RPC queries via LlamaRPC to analyze real Aave V3 borrow/collateral states and serves them to our Vercel frontend via API in seconds.",
   "apiDocs.llamaTitle": "3. DeFiLlama Protocols API",
   "apiDocs.llamaDesc": "Risk Cards and Protocol Risk Tables dynamically fetch data from the live DeFiLlama Open API every second to accurately rank and score the largest TVL crypto protocols globally.",
 
