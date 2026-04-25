@@ -4,7 +4,7 @@ from app.models.schemas import UserPosition, TokenBase, RiskFeatures
 
 logger = logging.getLogger(__name__)
 
-LLAMARPC_URL = "https://eth.llamarpc.com"
+LLAMARPC_URL = "https://ethereum-rpc.publicnode.com"
 # Aave V3 Ethereum Pool Contract
 AAVE_V3_POOL = "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
 # keccak256("getUserAccountData(address)")[:4].hex() -> bf92857c
