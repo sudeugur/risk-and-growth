@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
-import { useAuth, UserButton } from "@clerk/nextjs";
+import { useAuth, UserButton, useClerk } from "@clerk/nextjs";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
@@ -10,6 +10,7 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
   const { isSignedIn } = useAuth();
+  const { signOut } = useClerk();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -76,15 +77,30 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
             </button>
 
             {isSignedIn && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem', width: '100%' }}>
                 <button 
                   className={styles.walletBtn} 
-                  style={walletAddress ? { cursor: 'default' } : { opacity: 0.6, cursor: 'not-allowed' }}
+                  style={walletAddress ? { cursor: 'default', width: '100%', justifyContent: 'center' } : { width: '100%', justifyContent: 'center', cursor: 'pointer' }}
+                  onClick={(e) => {
+                    if (!walletAddress) {
+                      e.preventDefault();
+                      setMenuOpen(false);
+                      onConnectWallet();
+                    }
+                  }}
                 >
                   <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#8f9ba8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
                   {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}
                 </button>
-                <UserButton afterSignOutUrl="/" />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,0.05)', padding: '0.5rem 1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <UserButton afterSignOutUrl="/" />
+                  <button 
+                    onClick={() => signOut()}
+                    style={{ background: 'transparent', border: 'none', color: '#ff6b35', fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer' }}
+                  >
+                    Sign Out →
+                  </button>
+                </div>
               </div>
             )}
           </div>
