@@ -1,6 +1,6 @@
 export const fetchRiskReport = async (walletAddress) => {
   try {
-    const response = await fetch(`http://localhost:8000/api/v1/risk/analyze_positions`, {
+    const response = await fetch(`https://risk-and-growth.onrender.com/api/v1/risk/analyze_positions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
