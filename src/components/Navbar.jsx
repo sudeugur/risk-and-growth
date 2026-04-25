@@ -63,6 +63,31 @@ export default function Navbar({ walletAddress, onConnectWallet, onGoHome }) {
               <a href="#categories" className={styles.link}>{t("nav.riskCategories")}</a>
             </>
           )}
+
+          <div className={styles.mobileActions}>
+            <button
+              className={styles.langToggle}
+              onClick={toggleLocale}
+              aria-label="Toggle language"
+            >
+              <span className={locale === "tr" ? styles.langActive : ""}>TR</span>
+              <span className={styles.langDivider}>|</span>
+              <span className={locale === "en" ? styles.langActive : ""}>EN</span>
+            </button>
+
+            {isSignedIn && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
+                <button 
+                  className={styles.walletBtn} 
+                  style={walletAddress ? { cursor: 'default' } : { opacity: 0.6, cursor: 'not-allowed' }}
+                >
+                  <span className={styles.walletDot} style={{ background: walletAddress ? '#34d399' : '#8f9ba8', boxShadow: walletAddress ? '0 0 10px rgba(52,211,153,0.5)' : undefined }}></span>
+                  {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : t("nav.connectWallet")}
+                </button>
+                <UserButton afterSignOutUrl="/" />
+              </div>
+            )}
+          </div>
         </div>
 
         <div className={styles.rightGroup}>
