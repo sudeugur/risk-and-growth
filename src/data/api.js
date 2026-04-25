@@ -14,32 +14,30 @@ export const fetchRiskReport = async (walletAddress) => {
     
     return await response.json();
   } catch (error) {
-    console.warn("Backend API not reachable (normal on Vercel mobile), falling back to demo data.", error);
-    
-    // Vercel üzerinden telefondan girildiğinde Python sunucusuna (localhost) erişilemez.
-    // Uygulamanın çökmemesi ve demo portfolyo hesaplamalarının görünmesi için sahte veri (mock) döndürüyoruz.
+    // Vercel üzerinden telefondan girildiğinde API (Render) timeout yerse veya uyanamazsa hata verir.
+    // Kullanıcı kesinlikle mock veri istemediği için, her durumda boş veri (veya hata) gösteriyoruz.
+    // Uygulamanın tamamen çökmesini engellemek için, sıfırlanmış bir portföy döndürüyoruz.
     return {
       reports: [
         {
           wallet_address: walletAddress,
           current_risk: {
-            health_factor: { value: 1.45, description: "Sağlıklı" },
-            total_collateral_usd: 12500.0,
-            total_borrows_usd: 5400.0
+            health_factor: { value: 9999.0, description: "Bağlantı Hatası veya Boş Cüzdan" },
+            total_collateral_usd: 0.0,
+            total_borrows_usd: 0.0
           },
           ml_prediction: {
-            probability_24h: 12.5,
-            probability_7d: 28.4,
+            probability_24h: 0.0,
+            probability_7d: 0.0,
             risk_drivers: {
-              "Market Volatility": 45.2,
-              "Concentrated Collateral": 32.1,
-              "High Borrow Rate": 22.7
+              "Market Volatility": 0.0,
+              "Concentrated Collateral": 0.0,
+              "High Borrow Rate": 0.0
             }
           },
           stress_tests: [
-            { scenario_name: "ETH %20 Düşüş", simulated_health_factor: { value: 1.15 }, is_liquidatable: false },
-            { scenario_name: "ETH %40 Düşüş", simulated_health_factor: { value: 0.85 }, is_liquidatable: true },
-            { scenario_name: "Ani Kredi Sıkışması", simulated_health_factor: { value: 1.05 }, is_liquidatable: false }
+            { scenario_name: "ETH %20 Düşüş", simulated_health_factor: { value: 9999.0 }, is_liquidatable: false },
+            { scenario_name: "ETH %40 Düşüş", simulated_health_factor: { value: 9999.0 }, is_liquidatable: false }
           ]
         }
       ]
