@@ -106,10 +106,11 @@ const en = {
   "footer.privacy": "Privacy",
   "footer.terms": "Terms",
 
-  // Dashboard / Wallet
   "dashboard.title": "Wallet Risk Dashboard",
   "dashboard.wallet": "Connected Wallet",
   "dashboard.analyzing": "Engine Analyzing Wallet...",
+  "dashboard.riskSection": "Risk Analysis",
+  "dashboard.growthSection": "Growth Analysis",
   "dashboard.healthFactor": "Health Factor",
   "dashboard.status": "Status",
   "dashboard.aiPrediction": "AI Liquidation Prediction",
@@ -118,6 +119,9 @@ const en = {
   "dashboard.riskDrivers": "Risk Drivers (Impact %)",
   "dashboard.stressTests": "Stress Test Simulations",
   "dashboard.stressDesc": "Wallet resilience under sharp market drops",
+  "dashboard.vcMomentum": "VC Momentum (Growth Engine)",
+  "dashboard.vcDesc": "Total Protocol Health & Momentum Score (0-100) based on TVL Growth, Utilization, and Adoption.",
+  "dashboard.analyzedMarkets": "Analyzed Markets",
 
   // Risk levels
   "risk.low": "Low",

@@ -19,8 +19,8 @@ class UserPosition(BaseModel):
     risk_features: Optional[RiskFeatures] = None
 
 class MarketGrowthMetrics(BaseModel):
-    asset_id: str
-    tvl: float
-    volume_24h: float
-    active_users: int
-    dev_commits: int
+    market_symbol: str
+    tvl_growth_pct: float
+    revenue_efficiency: float
+    utilization_rate: float
+    adoption_trend: float

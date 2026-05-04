@@ -60,10 +60,7 @@ export default function WalletModal({ isOpen, onClose, onConnect }) {
             />
             {error && <div style={{color: '#f87171', fontSize: '0.8rem', marginTop: '0.5rem'}}>{error}</div>}
             
-            <div className={styles.whaleHint} onClick={fillWhale}>
-              <span className={styles.whaleIcon}>🐳</span>
-              Use a sample whale wallet for testing
-            </div>
+
           </div>
 
           <button 

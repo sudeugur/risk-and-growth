@@ -58,7 +58,31 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.sectionHeader {
+  grid-column: 1 / -1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sectionHeader::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 24px;
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  border-radius: 4px;
 }
 
 .fullWidth {
@@ -170,6 +194,40 @@
 
 .driverItem:last-child {
   border-bottom: none;
+}
+
+/* Cluster Badges */
+.clusterBadge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(123, 47, 247, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(123, 47, 247, 0.3);
+}
+
+.clusterBadge.bluechip {
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.clusterBadge.highgrowth {
+  background: rgba(248, 113, 113, 0.15);
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.momentumScoreRing {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #00d4ff;
+  text-shadow: 0 4px 20px rgba(0, 212, 255, 0.6);
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 /* Stress Grid */

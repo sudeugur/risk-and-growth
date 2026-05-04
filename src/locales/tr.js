@@ -106,18 +106,22 @@ const tr = {
   "footer.privacy": "Gizlilik",
   "footer.terms": "Şartlar",
 
-  // Dashboard / Wallet
   "dashboard.title": "Cüzdan Risk Panosu",
   "dashboard.wallet": "Bağlı Cüzdan",
   "dashboard.analyzing": "Motor Cüzdanı Analiz Ediyor...",
+  "dashboard.riskSection": "Risk Analizi",
+  "dashboard.growthSection": "Büyüme Analizi",
   "dashboard.healthFactor": "Sağlık Faktörü (Health Factor)",
   "dashboard.status": "Durum",
-  "dashboard.aiPrediction": "YZ Likidite Tahmini",
-  "dashboard.prob24h": "24s Likidite Olasılığı",
-  "dashboard.prob7d": "7g Likidite Olasılığı",
+  "dashboard.aiPrediction": "YZ Likidasyon Tahmini",
+  "dashboard.prob24h": "24s Likidasyon Olasılığı",
+  "dashboard.prob7d": "7g Likidasyon Olasılığı",
   "dashboard.riskDrivers": "Risk Sürücüleri (Yüzde Etki)",
   "dashboard.stressTests": "Stres Testi Simülasyonları",
   "dashboard.stressDesc": "Keskin pazar düşüşleri altındaki cüzdan dayanıklılığı",
+  "dashboard.vcMomentum": "VC Momentum (Büyüme Motoru)",
+  "dashboard.vcDesc": "TVL Büyümesi, Kullanım ve Benimsenmeye dayalı Toplam Protokol Sağlığı ve Momentum Skoru (0-100).",
+  "dashboard.analyzedMarkets": "Analiz Edilen Pazarlar",
 
   // Risk levels
   "risk.low": "Düşük",

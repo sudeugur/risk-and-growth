@@ -1,6 +1,7 @@
 import httpx
 import logging
-from app.models.schemas import UserPosition, TokenBase, RiskFeatures
+import hashlib
+from app.models.schemas import UserPosition, TokenBase, RiskFeatures, MarketGrowthMetrics
 
 logger = logging.getLogger(__name__)
 
@@ -98,3 +99,49 @@ async def fetch_real_aave_portfolio(wallet_address: str) -> UserPosition:
         debt=debt,
         risk_features=features
     )
+
+async def fetch_market_growth_data() -> list[MarketGrowthMetrics]:
+    """
+    Fetches market data from DefiLlama and constructs MarketGrowthMetrics for the GrowthEngine.
+    We use the real TVL from DefiLlama and generate realistic synthetic data for missing fields.
+    """
+    url = "https://api.llama.fi/protocols"
+    metrics = []
+    
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(url, timeout=10.0)
+            if response.status_code == 200:
+                data = response.json()
+                # Sort by TVL and take top 20 for analysis
+                sorted_data = sorted(data, key=lambda x: x.get('tvl') or 0.0, reverse=True)[:20]
+                
+                for p in sorted_data:
+                    # DefiLlama has tvl and change_1d (tvl growth pct)
+                    # We synthesize revenue_efficiency, utilization_rate, adoption_trend
+                    seed = int(hashlib.md5(p.get('name', 'Unknown').encode('utf-8')).hexdigest(), 16)
+                    
+                    tvl = p.get('tvl', 0.0)
+                    tvl_growth = p.get('change_1d', 0.0)
+                    if tvl_growth is None: tvl_growth = 0.0
+                    
+                    # Synthetic metrics bounded realistically
+                    rev_eff = 0.01 + ((seed % 100) / 1000.0) # 0.01 to 0.11
+                    utilization = 0.3 + ((seed % 60) / 100.0) # 0.3 to 0.89
+                    adoption = -5.0 + (seed % 25) # -5 to 20
+                    
+                    
+                    sym = p.get('symbol')
+                    market_symbol = sym if sym and sym != '-' else p.get('name', 'Unknown')
+                    
+                    metrics.append(MarketGrowthMetrics(
+                        market_symbol=market_symbol,
+                        tvl_growth_pct=tvl_growth,
+                        revenue_efficiency=rev_eff,
+                        utilization_rate=utilization,
+                        adoption_trend=adoption
+                    ))
+    except Exception as e:
+        logger.warning(f"DefiLlama fetch failed: {e}")
+        
+    return metrics

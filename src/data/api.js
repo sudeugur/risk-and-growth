@@ -30,17 +30,23 @@ export const fetchRiskReport = async (walletAddress) => {
             probability_24h: 0.0,
             probability_7d: 0.0,
             risk_drivers: {
-              "Market Volatility": 0.0,
-              "Concentrated Collateral": 0.0,
-              "High Borrow Rate": 0.0
+              "Liquidity_Depth": 0.0,
+              "Leverage_Ratio": 0.0,
+              "Market_Volatility": 0.0,
+              "HF_trajectory": 0.0
             }
           },
           stress_tests: [
-            { scenario_name: "ETH %20 Düşüş", simulated_health_factor: { value: 9999.0 }, is_liquidatable: false },
-            { scenario_name: "ETH %40 Düşüş", simulated_health_factor: { value: 9999.0 }, is_liquidatable: false }
+            { scenario_name: "15% Market Drop", drop_percentage: 15.0, simulated_health_factor: { value: 9999.0, description: "" }, is_liquidatable: false },
+            { scenario_name: "30% Market Drop", drop_percentage: 30.0, simulated_health_factor: { value: 9999.0, description: "" }, is_liquidatable: false }
           ]
         }
-      ]
+      ],
+      growth_data: {
+        vc_momentum_score: 0.0,
+        total_markets_analyzed: 0,
+        clusters: []
+      }
     };
   }
 };
