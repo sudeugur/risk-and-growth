@@ -5,7 +5,7 @@ This project was developed to analyze credit risk in decentralized finance (DeFi
 
 https://risk-and-growth.vercel.app/
 
-<img width="1800" height="837" alt="Ekran Resmi 2026-04-07 23 03 23" src="https://github.com/user-attachments/assets/ec2d0472-3955-40b4-8b0d-1f695ea69ff3" />
+<img width="3554" height="1632" alt="image" src="https://github.com/user-attachments/assets/14525a48-be87-4717-b977-92102cd92f70" />
 
 
  Key Features
